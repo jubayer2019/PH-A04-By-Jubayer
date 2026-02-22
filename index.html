@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Google Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            font-family: 'Geist', sans-serif;
+        }
+    </style>
+    
+
+</head>
+<body class="bg-[#F8FAFC]">
+    <section class="container mx-auto mt-[60px]">
+        <div class="header">
+            <h1 class="text-[32px] text-[#002C5C] font-extrabold mb-5">Job Application Tracker</h1>
+            <div class="top-card-parent grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="top-card-child rounded-lg bg-white p-4 shadow">
+                    <p class="text-[#323B49] text-[14px]">Total</p>
+                    <h2 class="text-[#002C5C] text-[24px] font-bold">8</h2>
+                </div>
+                <div class="top-card-child rounded-lg bg-white p-4 shadow">
+                    <p class="text-[#323B49] text-[14px]">Interview</p>
+                    <h2 class="text-[#10B981] text-[24px] font-bold">0</h2>
+                </div>
+                <div class="top-card-child rounded-lg bg-white p-4 shadow">
+                    <p class="text-[#323B49] text-[14px]">Rejected</p>
+                    <h2 class="text-[#EF4444] text-[24px] font-bold">0</h2>
+                </div>
+            </div>
+            <hr class="mt-[30px] mb-[30px] border-[#E6E7E9]">
+        </div>
+        <div class="available-job flex justify-between mb-5">
+            <h2 class="text-[#002C5C] text-[20px] font-semibold">Available Jobs</h2>
+            <p class="text-[16px] text-[#64748B]">8 jobs</p>
+        </div>
+    </section>
+</body>
+</html>
