@@ -151,6 +151,27 @@ main.addEventListener('click', function(event){
 
         
         calculateCount();
+        if (currentStatus === 'interview-filter-btn') {
+            if (InterviewList.length === 0) {
+                filteredSection.classList.add('hidden');
+                noJobCard.classList.remove('hidden');
+            } else {
+                renderInterviewList();
+            }
+        }
+
+        if (currentStatus === 'rejected-filter-btn') {
+            if (RejectedList.length === 0) {
+                filteredSection.classList.add('hidden');
+                noJobCard.classList.remove('hidden');
+            } else {
+                renderRejectedList();
+            }
+        }
+
+        if (currentStatus === 'all-filter-btn' && jobCards.children.length === 0) {
+            noJobCard.classList.remove('hidden');
+        }
 
         if(currentStatus === 'rejected-filter-btn'){
             renderRejectedList();
@@ -188,6 +209,28 @@ main.addEventListener('click', function(event){
             renderInterviewList();
         }
         calculateCount();
+        if (currentStatus === 'interview-filter-btn') {
+            if (InterviewList.length === 0) {
+                filteredSection.classList.add('hidden');
+                noJobCard.classList.remove('hidden');
+            } else {
+                renderInterviewList();
+            }
+        }
+
+        if (currentStatus === 'rejected-filter-btn') {
+            if (RejectedList.length === 0) {
+                filteredSection.classList.add('hidden');
+                noJobCard.classList.remove('hidden');
+            } else {
+                renderRejectedList();
+            }
+        }
+
+        if (currentStatus === 'all-filter-btn' && jobCards.children.length === 0) {
+            noJobCard.classList.remove('hidden');
+        }
+
     }else if (event.target.closest('.deleteBtn')) {
 
         const card = event.target.closest('.md\\:flex');
