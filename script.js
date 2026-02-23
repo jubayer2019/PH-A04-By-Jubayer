@@ -38,7 +38,6 @@ function updateJobsCount() {
   ofCount.innerText = '';
 }
 
-
 // Function to calculate count and update the UI
 function calculateCount(){
     TotalCount.innerText = jobCards.children.length;
@@ -63,7 +62,6 @@ function toggleStyle(id){
     const selected = document.getElementById(id);
     currentStatus = id;
 
-
     selected.classList.remove('bg-[#FFFFFF]', 'text-[#64748B]');
     selected.classList.add('bg-[#3B82F6]', 'text-white');
 
@@ -83,7 +81,6 @@ function toggleStyle(id){
         noJobCard.classList.remove('hidden');
         console.log('rejected empty');
     }
-
 
     // Button Logic
     
@@ -108,9 +105,6 @@ function toggleStyle(id){
 
     updateJobsCount()
     
-
-
-    
 }
 
 // Event Listener for Pushing Array List
@@ -123,12 +117,10 @@ main.addEventListener('click', function(event){
         const jobType = parentNode.querySelector('.jobType').innerText;
         const status = parentNode.querySelector('.status').innerText;
         const jobDescription = parentNode.querySelector('.jobDescription').innerText;
-        
 
         parentNode.querySelector('.status').innerText = 'INTERVIEW'
         parentNode.querySelector('.status').className = 'bg-[#10B9811a] text-[#10B981] rounded-sm py-2 px-3 uppercase text-[14px] status';
         
-
         const cardInfo ={
             jobName,
             jobTitle,
@@ -140,17 +132,16 @@ main.addEventListener('click', function(event){
         const jobExist = InterviewList.find(item=> item.jobName == cardInfo.jobName)
 
         
-        
         if(!jobExist){
             InterviewList.push(cardInfo);
         }
-
-        
 
         RejectedList = RejectedList.filter(item=> item.jobName != cardInfo.jobName)
 
         
         calculateCount();
+
+        // Rendering Logic after pushing to array
         if (currentStatus === 'interview-filter-btn') {
             if (InterviewList.length === 0) {
                 filteredSection.classList.add('hidden');
@@ -209,6 +200,8 @@ main.addEventListener('click', function(event){
             renderInterviewList();
         }
         calculateCount();
+
+        // Rendering Logic after pushing to array
         if (currentStatus === 'interview-filter-btn') {
             if (InterviewList.length === 0) {
                 filteredSection.classList.add('hidden');
@@ -251,6 +244,8 @@ main.addEventListener('click', function(event){
         RejectedList = RejectedList.filter(item => item.jobName !== jobName);
 
         calculateCount();
+
+        // Rendering Logic after deleting from array
         if (currentStatus === 'interview-filter-btn') {
             if (InterviewList.length === 0) {
                 filteredSection.classList.add('hidden');
