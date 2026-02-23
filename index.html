@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Tracker</title>
+
+    <!-- Font Awesome Link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -44,7 +48,7 @@
         <div class="available-job flex justify-between mb-5">
             <h2 class="text-[#002C5C] text-[20px] font-semibold">Available Jobs</h2>
             <div class="flex gap-1">
-                <p class="text-[16px] text-[#64748B]" id="AvailableJobsCount">0</p><p class="text-[16px] text-[#64748B]"> jobs</p>
+                <p class="text-[16px] text-[#64748B]" id="ofCount"></p><p class="text-[16px] text-[#64748B]" id="AvailableJobsCount">0</p><p class="text-[16px] text-[#64748B]"> jobs</p>
             </div>
         </div>
     </section>
@@ -58,7 +62,7 @@
         </div>
 
         <!-- Filtered Card -->
-         <section id="filteredSection">
+         <section id="filteredSection" class="hidden">
 
          </section>
 
@@ -80,7 +84,7 @@
                     </div>
                 </div>
                 <div class="card-bin mt-[30px] md:mt-0">
-                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><img src="./img/bin.png" alt=""></button>
+                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
              </div>
 
@@ -101,7 +105,7 @@
                     </div>
                 </div>
                 <div class="card-bin mt-[30px] md:mt-0">
-                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><img src="./img/bin.png" alt=""></button>
+                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
              </div>
 
@@ -122,7 +126,7 @@
                     </div>
                 </div>
                 <div class="card-bin mt-[30px] md:mt-0">
-                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><img src="./img/bin.png" alt=""></button>
+                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
              </div>
 
@@ -143,7 +147,7 @@
                     </div>
                 </div>
                 <div class="card-bin mt-[30px] md:mt-0">
-                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><img src="./img/bin.png" alt=""></button>
+                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
              </div>
 
@@ -164,7 +168,7 @@
                     </div>
                 </div>
                 <div class="card-bin mt-[30px] md:mt-0">
-                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><img src="./img/bin.png" alt=""></button>
+                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
              </div>
 
@@ -185,7 +189,7 @@
                     </div>
                 </div>
                 <div class="card-bin mt-[30px] md:mt-0">
-                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><img src="./img/bin.png" alt=""></button>
+                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
              </div>
 
@@ -206,7 +210,7 @@
                     </div>
                 </div>
                 <div class="card-bin mt-[30px] md:mt-0">
-                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><img src="./img/bin.png" alt=""></button>
+                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
              </div>
 
@@ -227,14 +231,14 @@
                     </div>
                 </div>
                 <div class="card-bin mt-[30px] md:mt-0">
-                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><img src="./img/bin.png" alt=""></button>
+                    <button class="border-2 border-[#F1F2F4] p-2 rounded-full"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
              </div>
 
              
         </section>
 
-        <section>
+        <section id="noJobCard" class="hidden">
             <!-- No Jobs Available Card -->
             <div class="NoJobCard bg-white rounded-md border-2 border-[#F1F2F4] py-[60px] px-10 my-4">
                 <div class="card-content mx-auto flex-row  justify-center items-center">
@@ -250,5 +254,7 @@
     </main>
 
     <script src="script.js"></script>
+     <!-- <script src="newjava.js"></script> -->
+     <!-- <script src="test.js"></script> -->
 </body>
 </html>
