@@ -44,37 +44,44 @@ function toggleStyle(id){
     selected.classList.add('bg-[#3B82F6]', 'text-white');
 }
 
+// Event Listener for Pushing Array List
+
 jobCardsContainer.addEventListener('click', function(event){
-    if(event.target.classList.contains('interview-filter-btn')){
+    if(event.target.classList.contains('interviewBtn')){
+        // console.log(event.target.parentNode.parentNode);
         const parentNode = event.target.parentNode.parentNode;
         const jobName = parentNode.querySelector('.jobName').innerText;
         const jobTitle = parentNode.querySelector('.jobTitle').innerText;
         const jobType = parentNode.querySelector('.jobType').innerText;
         const status = parentNode.querySelector('.status').innerText;
         const jobDescription = parentNode.querySelector('.jobDescription').innerText;
-
-        const jobData = {
+        
+        const cardInfo ={
             jobName,
             jobTitle,
             jobType,
             status,
             jobDescription
-        };
-    const existingJob = InterviewList.find(item=> item.jobName == jobData.jobName);
-    if(!existingJob){
-        InterviewList.push(jobData);
-        // calculateCount();
+        }
+
+        const jobExist = InterviewList.find(item=> item.jobName == cardInfo.jobName)
+        parentNode.querySelector('.status').innerText = 'INTERVIEW'
+        if(!jobExist){
+            InterviewList.push(cardInfo);
+        }
+        renderInterviewList()
     }
-    }
-console.log(InterviewList);
 
 })
 
 function renderInterviewList(){
     filteredSection.innerHTML = '';
     for(let interview of InterviewList){
+
+        console.log(interview);
+
         let div = document.createElement('div');
-        div.classList=' bg-white rounded-md border-2 border-[#F1F2F4] p-5 my-4 md:flex md:justify-between';
+        div.className=' bg-white rounded-md border-2 border-[#F1F2F4] p-5 my-4 md:flex md:justify-between';
         div.innerHTML=`
         <div class="card-content">
             <div class="text-content">
